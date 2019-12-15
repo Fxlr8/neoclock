@@ -1,0 +1,22 @@
+{
+  "name": "neoclock",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fxlr8/neoclock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fxlr8/neoclock/issues"
+  },
+  "homepage": "https://github.com/fxlr8/neoclock#readme",
+  "dependencies": {
+    "serialport": "^8.0.5"
+  }
+}
