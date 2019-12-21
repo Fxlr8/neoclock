@@ -10,13 +10,14 @@ export default class Animation implements LedsGenerator {
     public saturation = 1.0
     public lightness = 1.0
     public buffer: Uint8Array
-    public dotCount: number
-    public step: number
-    public speed: number
+    public dotCount = 0
+    public step = 0
+    public speed = 0
     constructor(dotBuffer: Uint8Array, startHue: number, step: number, speed: number) {
         this.buffer = dotBuffer
         this.startHue = startHue
         this.step = step
+        this.speed = speed
         this.dotCount = Math.round(dotBuffer.length / 3)
         console.log({
             dotCount: this.dotCount
@@ -32,6 +33,5 @@ export default class Animation implements LedsGenerator {
             this.buffer[offset + 2] = b
         }
         this.startHue += this.speed
-        console.log(this.buffer)
     }
 }
