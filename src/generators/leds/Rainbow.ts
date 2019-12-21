@@ -18,6 +18,9 @@ export default class Animation implements LedsGenerator {
         this.startHue = startHue
         this.step = step
         this.dotCount = Math.round(dotBuffer.length / 3)
+        console.log({
+            dotCount: this.dotCount
+        })
     }
 
     update() {
@@ -29,5 +32,6 @@ export default class Animation implements LedsGenerator {
             this.buffer[offset + 2] = b
         }
         this.startHue += this.speed
+        console.log(this.buffer)
     }
 }

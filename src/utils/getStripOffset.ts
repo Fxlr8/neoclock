@@ -7,7 +7,7 @@ import { LIGHTS_COUNT } from '../Display'
 export default function getStripOffset(pos: number) {
     if ((pos - 1) % 2 === 0) {
         // четные позиции в буфер подсветки ламп
-        return Math.round((pos - 1) / 2)
+        return Math.round((pos - 1) / 2) * 3
     } else {
         // нечетные позиции в буфер подсветки точек
         return (LIGHTS_COUNT + Math.round(pos / 2)) * 3
