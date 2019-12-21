@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": ".build",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "ES2018",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "lib": [
+            "ES2018",
+            "esnext.asynciterable"
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@shared": [
+                "src/shared/*"
+            ]
+        },
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

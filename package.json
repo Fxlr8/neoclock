@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .build/index.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,9 @@
   "homepage": "https://github.com/fxlr8/neoclock#readme",
   "dependencies": {
     "serialport": "^8.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "typescript": "^3.7.4"
   }
 }
