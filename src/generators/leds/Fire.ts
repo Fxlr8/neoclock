@@ -1,6 +1,6 @@
 import getStripOffset from '../../utils/getStripOffset'
 import SimplexNoise from 'simplex-noise'
-import LedsGenerator from './index'
+import LedsGenerator from './'
 
 type Color = [number, number, number]
 
