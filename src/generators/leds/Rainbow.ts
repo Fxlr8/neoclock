@@ -1,11 +1,8 @@
 import hsv2rgb from '../../HSV2RGB'
 import getStripOffset from '../../utils/getStripOffset'
+import LedsGenerator from './index'
 
-interface LedsGenerator {
-    update: () => void
-}
-
-export default class Animation implements LedsGenerator {
+export default class Rainbow implements LedsGenerator {
     public startHue = 0.0
     public saturation = 1.0
     public lightness = 1.0

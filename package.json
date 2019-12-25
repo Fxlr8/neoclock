@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/fxlr8/neoclock#readme",
   "dependencies": {
-    "serialport": "^8.0.5"
+    "serialport": "^8.0.5",
+    "simplex-noise": "^2.4.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
