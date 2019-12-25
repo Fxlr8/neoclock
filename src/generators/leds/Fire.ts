@@ -4,11 +4,11 @@ import LedsGenerator from './index'
 
 type Color = [number, number, number]
 
-const black = [0, 0, 0]
+const black = [75, 20, 20]
 
-const red = [252, 5, 10]
+const red = [255, 42, 0]
 
-const yellow = [252, 243, 68]
+const yellow = [252, 204, 0]
 
 const pivot = 0.3
 
@@ -29,7 +29,7 @@ export default class FireGenerator implements LedsGenerator {
     update() {
         for (let i = 0; i < this.dotCount; i++) {
             const offset = getStripOffset(i + 1)
-            const a = this.noise.noise2D(i / this.dotCount, (this.t * 0.5) / this.dotCount) * 0.5 + 0.5;
+            const a = this.noise.noise2D(i / 9, (this.t * 0.1) / 9) * 0.5 + 0.5;
             const [r, g, b] = this.getGradient(a)
             this.buffer[offset] = r
             this.buffer[offset + 1] = g
