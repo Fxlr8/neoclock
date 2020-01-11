@@ -1,4 +1,4 @@
-import { LIGHTS_COUNT } from '../Display'
+import { DOTS_COUNT } from '../Display'
 
 /**
  * буфер устроен таким образом, что сначала идут данные для подсветки ламп, а потом для подсветки точек
@@ -10,6 +10,6 @@ export default function getStripOffset(pos: number) {
         return Math.round((pos - 1) / 2) * 3
     } else {
         // нечетные позиции в буфер подсветки точек
-        return (LIGHTS_COUNT + Math.round(pos / 2)) * 3
+        return (DOTS_COUNT + Math.round(pos / 2)) * 3
     }
 }
