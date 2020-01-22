@@ -8,8 +8,8 @@ import DisplayController from './DisplayController'
 
 
 
-// const display = new Display('/dev/ttyAMA0')
-const display = new Display('/dev/tty.wchusbserial1410')
+const display = new Display('/dev/ttyAMA0')
+// const display = new Display('/dev/tty.wchusbserial1410')
 const rainbow = new Rainbow(display.getLedsBuffer(), 0, 1 / 57, 0.001)
 const fire = new Fire(display.getLedsBuffer())
 const timestamp = new Timestamp(display.getDigitsBuffer())
