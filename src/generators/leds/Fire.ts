@@ -10,6 +10,7 @@ const red = [255, 42, 0]
 
 const yellow = [252, 204, 0]
 
+// fire gradient point center
 const pivot = 0.3
 
 function lerp(a: number, b: number, t: number): number {
