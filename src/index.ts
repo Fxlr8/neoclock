@@ -74,7 +74,7 @@ const animations = [
 let a = 0
 
 setInterval(() => {
-    if (a > animations.length) {
+    if (a >= animations.length) {
         a = 0
     }
     displayController.setAnimation(animations[a])
