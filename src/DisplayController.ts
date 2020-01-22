@@ -17,7 +17,12 @@ export default class DisplayController {
     }
 
     setAnimation(animation: Animation) {
-
+        if (this.animation) {
+            this.fadeTarget = 0
+            this.nextAnimation = animation
+        } else {
+            this.animation = animation
+        }
     }
 
     off() {
@@ -37,13 +42,24 @@ export default class DisplayController {
         this.animation.update(msPerFrame)
 
         if (Math.abs(this.fade - this.fadeTarget) > 0.01) {
-            this.fade = this.fade + (this.fadeTarget - this.fade) * 0.02
+            this.fade = this.fade + (this.fadeTarget - this.fade) * 0.05
         } else {
             if (this.fadeTarget === 0) {
-                clearInterval(this.interval)
+                this.display.getDigitsBuffer().fill(11)
+                this.display.getLedsBuffer().fill(0)
+                if (this.turningOff) {
+                    clearInterval(this.interval)
+                    console.log('display turned off')
+                } else if (this.nextAnimation) {
+                    this.animation = this.nextAnimation
+                    this.fadeTarget = 1
+                }
             }
-            this.display.getDigitsBuffer().fill(11)
-            this.display.getLedsBuffer().fill(0)
+        }
+
+        const buf = this.display.getLedsBuffer()
+        for (let i = 0; i < buf.length; i++) {
+            buf[i] = Math.round(buf[i] * this.fade);
         }
 
         this.display.show()
