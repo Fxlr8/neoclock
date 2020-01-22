@@ -12,8 +12,8 @@ const timestamp = new Timestamp(display.getDigitsBuffer())
 const numberFire = new NumberFire(display.getDigitsBuffer())
 
 setInterval(() => {
-    fire.update()
-    numberFire.update()
+    // fire.update()
+    // numberFire.update()
     timestamp.update()
     rainbow.update()
     display.show()
