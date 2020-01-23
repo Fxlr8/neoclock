@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
+    "@types/serialport": "^8.0.0",
     "typescript": "^3.7.4"
   }
 }

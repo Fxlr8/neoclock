@@ -25,9 +25,12 @@ const BUF_SIZE = (DOTS_COUNT * 3) + (LIGHTS_COUNT * 3) + DIGITS_COUNT
 export default class NixieDisplay {
     private uart: SerialPort
     public buffer = new Uint8Array(BUF_SIZE)
+    public ready = false
     constructor(dev: string) {
         this.uart = new SerialPort(dev, {
             baudRate: 115200
+        }, () => {
+            this.ready = true
         })
     }
 
@@ -66,7 +69,11 @@ export default class NixieDisplay {
     }
 
     public show() {
+        this.ready = false
         this.uart.write(this.buffer)
+        this.uart.drain(() => {
+            this.ready = true
+        })
     }
 }
 

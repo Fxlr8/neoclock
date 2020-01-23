@@ -39,6 +39,9 @@ export default class DisplayController {
     }
 
     animate() {
+        if (!this.display.ready) {
+            return
+        }
         this.animation.update(msPerFrame)
 
         if (Math.abs(this.fade - this.fadeTarget) > 0.01) {
