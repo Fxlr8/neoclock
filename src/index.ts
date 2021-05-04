@@ -68,33 +68,39 @@ const flip = new Flip()
 
 const dogeAnimation: Animation = {
     update: () => {
-        // display.setDataFromString(dogeSource.price)
-        // flip.update(dogeSource.grows)
-        // display.fillLamps(flip.result[0], flip.result[1], flip.result[2])
-        display.setDot(0, 0, 0, 255)
-        display.setDot(8, 0, 0, 255)
+        display.setDataFromString(dogeSource.price)
+        flip.update(dogeSource.grows)
+        display.fillLamps(flip.result[0], flip.result[1], flip.result[2])
+        // display.setDot(0, 0, 0, 255)
+        // display.setDot(8, 0, 0, 255)
 
-        display.setLamp(0, 255, 0, 0)
-        display.setLamp(1, 0, 255, 0)
-        display.setLamp(8, 0, 255, 0)
-        display.setLamp(9, 255, 0, 0)
+        // display.setLamp(0, 255, 0, 0)
+        // display.setLamp(1, 0, 255, 0)
+        // display.setLamp(8, 0, 255, 0)
+        // display.setLamp(9, 255, 0, 0)
 
-        display.setDigit(0, 0)
-        display.setDigit(1, 1)
-        display.setDigit(2, 2)
-        display.setDigit(3, 3)
-        display.setDigit(4, 4)
-        display.setDigit(5, 5)
-        display.setDigit(6, 6)
-        display.setDigit(7, 7)
-        display.setDigit(8, 8)
-        display.setDigit(9, 9)
+        // display.setDigit(0, 0)
+        // display.setDigit(1, 1)
+        // display.setDigit(2, 2)
+        // display.setDigit(3, 3)
+        // display.setDigit(4, 4)
+        // display.setDigit(5, 5)
+        // display.setDigit(6, 6)
+        // display.setDigit(7, 7)
+        // display.setDigit(8, 8)
+        // display.setDigit(9, 9)
     }
 }
 
 const displayController = new DisplayController(display)
 displayController.setAnimation(dogeAnimation)
 displayController.on()
+
+// setTimeout(() => {
+//     dogeAnimation.update(0)
+//     display.print()
+// }, 3000)
+
 
 // const animations = [
 //     rainbowTimestampAnimation,
