@@ -73,7 +73,7 @@ export default class NixieDisplay {
                 digitPos += 1
             } else if (code === 44 || code === 46) {
                 // точка или запятая
-                this.setDot(digitPos - 1, 120, 55, 10) // точка цвета горения лампы
+                this.setDot(digitPos, 120, 55, 10) // точка цвета горения лампы
             }
         }
     }
