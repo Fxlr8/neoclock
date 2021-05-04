@@ -36,21 +36,21 @@ export default class NixieDisplay {
     }
 
     public setDot(pos: number, r: number, g: number, b: number) {
-        const offset = (LIGHTS_COUNT + pos - 1) * 3
+        const offset = (LIGHTS_COUNT + pos) * 3
         this.buffer[offset] = r
         this.buffer[offset + 1] = g
         this.buffer[offset + 2] = b
     }
 
     public setLamp(pos: number, r: number, g: number, b: number) {
-        const offset = (pos - 1) * 3
+        const offset = pos * 3
         this.buffer[offset] = r
         this.buffer[offset + 1] = g
         this.buffer[offset + 2] = b
     }
 
     public setDigit(pos: number, d: number) {
-        const offset = (LIGHTS_COUNT + DOTS_COUNT + pos - 1) * 3
+        const offset = (LIGHTS_COUNT + DOTS_COUNT + pos) * 3
         this.buffer[offset] = d
     }
 
@@ -73,7 +73,7 @@ export default class NixieDisplay {
                 digitPos += 1
             } else if (code === 44 || code === 46) {
                 // точка или запятая
-                this.setDot(digitPos, 120, 55, 10) // точка цвета горения лампы
+                this.setDot(digitPos - 1, 120, 55, 10) // точка цвета горения лампы
             }
         }
     }
