@@ -50,7 +50,7 @@ export default class NixieDisplay {
     }
 
     public setDigit(pos: number, d: number) {
-        const offset = (LIGHTS_COUNT + DOTS_COUNT + pos - 1) * 3
+        const offset = (LIGHTS_COUNT + DOTS_COUNT) * 3 + pos
         this.buffer[offset] = d
     }
 
