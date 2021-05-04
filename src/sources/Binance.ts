@@ -1,9 +1,8 @@
 import got from 'got'
 
-const priceQuery = 'https://binance.com/api/v3/avgPrice?symbol='
+const priceQuery = 'https://binance.com/api/v3/ticker/price?symbol='
 
 interface priceQueryResponse {
-    mins: number,
     price: string
 }
 
