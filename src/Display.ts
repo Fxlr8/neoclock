@@ -26,6 +26,7 @@ export default class NixieDisplay {
     private uart: SerialPort
     public buffer = new Uint8Array(BUF_SIZE)
     public ready = false
+
     constructor(dev: string) {
         this.uart = new SerialPort(dev, {
             baudRate: 115200
@@ -60,6 +61,29 @@ export default class NixieDisplay {
         this.buffer[offset + 2] = b
     }
 
+    public setDataFromString(data?: string) {
+        if (!data) return
+        let digitPos = 0
+        for (let i = 0; i < data.length; i++) {
+            const code = data.charCodeAt(i)
+
+            if (code >= 48 && code <= 57) {
+                // цифра [0, 9]
+                this.setDigit(digitPos, code - 48)
+                digitPos += 1
+            } else if (code === 44 || code === 46) {
+                // точка или запятая
+                this.setDot(digitPos - 1, 120, 55, 10) // точка цвета горения лампы
+            }
+        }
+    }
+
+    public fillLamps(r: number, g: number, b: number) {
+        for (let i = 0; i < LIGHTS_COUNT; i++) {
+            this.setLamp(i, r, g, b)
+        }
+    }
+
     public getLedsBuffer() {
         return this.buffer.subarray(0, LEDS_COUNT * 3)
     }
@@ -70,6 +94,7 @@ export default class NixieDisplay {
 
     public show() {
         this.ready = false
+        //@ts-ignore
         this.uart.write(this.buffer)
         this.uart.drain(() => {
             this.ready = true

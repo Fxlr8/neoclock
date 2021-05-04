@@ -16,9 +16,6 @@ export default class Rainbow implements LedsGenerator {
         this.step = step
         this.speed = speed
         this.dotCount = Math.round(dotBuffer.length / 3)
-        console.log({
-            dotCount: this.dotCount
-        })
     }
 
     update() {

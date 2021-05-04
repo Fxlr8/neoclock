@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/fxlr8/neoclock#readme",
   "dependencies": {
+    "got": "^11.8.2",
     "serialport": "^8.0.5",
     "simplex-noise": "^2.4.0"
   },
