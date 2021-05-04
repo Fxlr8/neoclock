@@ -9,7 +9,7 @@ function lerp(a: number, b: number, t: number): number {
 const MAX_STEPS = 100
 
 export default class Flip {
-    good = [3, 166, 109] // зеленый 
+    good = [3, 166, 10] // зеленый 
     bad = [207, 48, 74] // красный
     result = [0, 0, 0]
 
